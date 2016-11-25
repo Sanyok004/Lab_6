@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from DataBaseApp.views import main_page, TeamView, UserView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', main_page, name='main'),
+    url(r'^teams/', TeamView.as_view(), name='teams'),
+    url(r'^users/', UserView.as_view(), name='users'),
 ]
